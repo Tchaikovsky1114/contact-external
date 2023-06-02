@@ -6,11 +6,10 @@ import { createMemberInfoObject, findSameStaffname, getStorageData, setStorageDa
 import usePhone from '../hooks/usePhone';
 
 
-const SecondaryContactModal = ({handleCloseModal,isOpen,logoImage,accentColor,tabIndex,memberInfo}) => {
+const SecondaryContactModal = ({pressCall, pressSMS ,handleCloseModal,isOpen,logoImage,accentColor,tabIndex,memberInfo}) => {
   
   const [isMyNameInContact,setIsMyNameInContact] = useState(false);
   const { width } = useWindowDimensions();
-  const { pressCall, pressSMS } = usePhone();
   
 
   const pressBookmark = useCallback(async(memberInfo) => {

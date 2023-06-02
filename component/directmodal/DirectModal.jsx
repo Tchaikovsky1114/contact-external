@@ -9,7 +9,7 @@ import DirectModalOuter from './DirectModalOuter'
 import useContacts from '../../hooks/useContacts'
 
 
-const DirectModal = ({handleCloseDirectModal,directModalVisible,width,pressCall}) => {
+const DirectModal = ({handleCloseDirectModal,directModalVisible,width,pressCall,handleShowModal}) => {
   
   const { callStorageContact,contacts } = useContacts();
   
@@ -31,7 +31,7 @@ const DirectModal = ({handleCloseDirectModal,directModalVisible,width,pressCall}
           <DirectModalHeader />
           <ScrollView style={{minHeight:'80%',width:'100%',borderRadius:32,marginTop:width < 330 ? 16 : 32}}>
             <DirectModalMemberLayout>
-              {contacts.map((item) => <DirectModalMemberCard key={item.name} item={item} pressCall={pressCall} width={width} />)}
+              {contacts.map((item) => <DirectModalMemberCard handleShowModal={handleShowModal} key={item.name} item={item} pressCall={pressCall} width={width} />)}
             </DirectModalMemberLayout>
           </ScrollView>
       </DirectModalLayout>

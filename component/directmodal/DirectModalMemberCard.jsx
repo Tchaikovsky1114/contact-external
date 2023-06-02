@@ -7,7 +7,7 @@ import useContacts from '../../hooks/useContacts';
 
 
 
-const DirectModalMemberCard = ({ item,width }) => {
+const DirectModalMemberCard = ({ item,width,handleShowModal }) => {
   const { deleteMemberInContacts } = useContacts();
   
   return (
