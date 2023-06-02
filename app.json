@@ -1,0 +1,89 @@
+{
+  "expo": {
+    "name": "성원연락망",
+    "slug": "swcontact",
+    "version": "1.7.0",
+    "orientation": "portrait",
+    "icon": "./assets/newicon.png",
+    "userInterfaceStyle": "light",
+    "scheme": "myapp",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "cover",
+      "backgroundColor": "#ffffff"
+    },
+    "runtimeVersion": {
+      "policy": "sdkVersion"
+    },
+    "androidNavigationBar": {
+      "visible": "immersive"
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true,
+      "requireFullScreen": true,
+      "infoPlist": {
+        "NSContactsUsageDescription": "성원연락망이 연락처에 접근할 수 있게 허용해주세요."
+      },
+      "bundleIdentifier": "host.exp.swcontact"
+    },
+    "android": {
+      "versionCode": 8,
+      "icon": "./assets/newicon.png",
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive.png",
+        "backgroundColor": "#ffffff"
+      },
+      "permissions": [
+        "android.permission.READ_CONTACTS",
+        "android.permission.WRITE_CONTACTS"
+      ],
+      "intentFilters": [
+        {
+          "action": "VIEW",
+          "autoVerify": true,
+          "data": [
+            {
+              "scheme": "https"
+            }
+          ],
+          "category": [
+            "BROWSABLE",
+            "DEFAULT"
+          ]
+        }
+      ],
+      "package": "com.swadpia.swcontact",
+      "runtimeVersion": {
+        "policy": "sdkVersion"
+      }
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      [
+        "expo-screen-orientation",
+        {
+          "initialOrientation": "DEFAULT"
+        }
+      ],
+      [
+        "expo-contacts",
+        {
+          "contactsPermission": "성원연락망이 연락처에 접근할 수 있게 허용해주세요."
+        }
+      ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "4fbafa0b-1783-4da6-b05e-82cb54d27e69"
+      }
+    },
+    "updates": {
+      "url": "https://u.expo.dev/4fbafa0b-1783-4da6-b05e-82cb54d27e69"
+    }
+  }
+}
