@@ -1,0 +1,1 @@
+export const DEFAULT_IMAGE = 'https://www.nicepng.com/png/detail/933-9332131_profile-picture-default-png.png';
