@@ -1,6 +1,6 @@
-import { Pressable, StyleSheet, Text, View } from 'react-native'
+import { Pressable, StyleSheet} from 'react-native'
 import React from 'react'
-import {useNavigation} from 'react-navigation';
+import {useNavigation} from '@react-navigation/native';
 
 export default function RenderButton({showChart,imageUrl,width}) {
   const navigation = useNavigation();

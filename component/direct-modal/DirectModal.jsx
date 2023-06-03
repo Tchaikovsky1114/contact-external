@@ -7,7 +7,7 @@ import DirectModalOuter from './ModalOuter';
 import useContacts from '../../hooks/useContacts';
 import MemberList from './MemberList';
 
-const DirectModal = ({handleCloseDirectModal,directModalVisible,width,handleShowModal}) => {
+const DirectModal = ({handleCloseDirectModal,directModalVisible,width,handleShowModalWithClickedMemberInfo}) => {
   const { callStorageContact, contacts } = useContacts();
 
   useEffect(() => {
@@ -29,7 +29,7 @@ const DirectModal = ({handleCloseDirectModal,directModalVisible,width,handleShow
           />
           <DirectModalHeader />
           <MemberList
-            handleShowModal={handleShowModal}
+            handleShowModalWithClickedMemberInfo={handleShowModalWithClickedMemberInfo}
             width={width}
             contacts={contacts}
           />

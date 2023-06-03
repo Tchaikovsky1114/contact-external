@@ -4,7 +4,7 @@ import GroupTitle from './GroupTitle';
 import CardLayout from './CardLayout';
 import MemberCard from './MemberCard';
 
-const GroupCard = ({ group, item,handleShowModal }) => {
+const GroupCard = ({ group, item,handleShowModalWithClickedMemberInfo }) => {
   
   return (
     <View>
@@ -31,7 +31,7 @@ const GroupCard = ({ group, item,handleShowModal }) => {
                 staffName={item.staff_name}
                 photoFile={item.photo_file}
                 item={item.item}
-                handleShowModal={handleShowModal}
+                handleShowModalWithClickedMemberInfo={handleShowModalWithClickedMemberInfo}
               />
             ) : null
           }

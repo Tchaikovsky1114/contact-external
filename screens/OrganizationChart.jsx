@@ -33,7 +33,7 @@ const OrganizationChart = () => {
 
   const [isOpen, setIsOpen] = useState(false);
   const [directModalVisible, setDirectModalVisible] = useState(false);
-  const { handleShowModal, handleCloseModal, memberInfo } = useModal(
+  const { handleShowModalWithClickedMemberInfo, handleCloseModal, memberInfo } = useModal(
     isOpen,
     setIsOpen
   );
@@ -68,7 +68,7 @@ const OrganizationChart = () => {
         directModalVisible={directModalVisible}
         handleOpenDirectModal={handleOpenDirectModal}
         handleCloseDirectModal={handleCloseDirectModal}
-        handleShowModal={handleShowModal}
+        handleShowModalWithClickedMemberInfo={handleShowModalWithClickedMemberInfo}
         width={width}
       />
       <SecondaryContactModal
@@ -77,7 +77,7 @@ const OrganizationChart = () => {
         tabIndex={tabIndex}
         isOpen={isOpen}
         memberInfo={memberInfo}
-        handleShowModal={handleShowModal}
+        handleShowModalWithClickedMemberInfo={handleShowModalWithClickedMemberInfo}
         handleCloseModal={handleCloseModal}
         pressCall={pressCall}
         pressSMS={pressSMS}
@@ -98,7 +98,7 @@ const OrganizationChart = () => {
         {foundMembers.length > 0 && (
           <SearchBox
             foundMembers={foundMembers}
-            handleShowModal={handleShowModal}
+            handleShowModalWithClickedMemberInfo={handleShowModalWithClickedMemberInfo}
             width={width}
           />
         )}
@@ -106,7 +106,7 @@ const OrganizationChart = () => {
         {organization && group && (
           <GroupList
             group={group}
-            handleShowModal={handleShowModal}
+            handleShowModalWithClickedMemberInfo={handleShowModalWithClickedMemberInfo}
             tabIndex={tabIndex}
             setFoundMembers={setFoundMembers}
             setTabIndex={setTabIndex}

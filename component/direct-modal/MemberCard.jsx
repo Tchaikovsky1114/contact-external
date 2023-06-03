@@ -5,7 +5,7 @@ import { colors } from '../../colors';
 import useContacts from '../../hooks/useContacts';
 import MemberCardDeleteButton from './MemberCardDeleteButton';
 
-const DirectModalMemberCard = ({ item, width, handleShowModal }) => {
+const DirectModalMemberCard = ({ item, width, handleShowModalWithClickedMemberInfo }) => {
   const { deleteMemberInContacts } = useContacts();
 
   return (
@@ -15,7 +15,7 @@ const DirectModalMemberCard = ({ item, width, handleShowModal }) => {
     >
       <TouchableOpacity
         onPress={() =>
-          handleShowModal({
+          handleShowModalWithClickedMemberInfo({
             ...item,
             mobile: item.mobile,
             org_name: item.organization,

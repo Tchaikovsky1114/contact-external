@@ -3,7 +3,7 @@ import React from 'react';
 import { colors } from '../../colors';
 import { DEFAULT_IMAGE } from '../../constants/constants';
 
-const SearchBox = ({foundMembers,handleShowModal,width}) => {
+const SearchBox = ({foundMembers,handleShowModalWithClickedMemberInfo,width}) => {
   return (
     <>
       <View
@@ -32,7 +32,7 @@ const SearchBox = ({foundMembers,handleShowModal,width}) => {
           renderItem={({ item }) => (
             <TouchableOpacity
               style={styles.memberCard}
-              onPress={() => handleShowModal(item)}
+              onPress={() => handleShowModalWithClickedMemberInfo(item)}
             >
               <Image
                 resizeMode="contain"

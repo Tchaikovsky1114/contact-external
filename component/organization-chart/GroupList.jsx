@@ -8,7 +8,7 @@ const GroupList = ({
   setTabIndex,
   setFoundMembers,
   tabIndex,
-  handleShowModal,
+  handleShowModalWithClickedMemberInfo,
 }) => {
   const { width: windowWidth } = useWindowDimensions();
   const [firstTouchOffSet, setFirstTouchOffSet] = useState(0);
@@ -51,7 +51,7 @@ const GroupList = ({
           renderItem={({ item }) => (
             <GroupCard
               item={item}
-              handleShowModal={handleShowModal}
+              handleShowModalWithClickedMemberInfo={handleShowModalWithClickedMemberInfo}
               key={item.staff_name}
               group={group}
             />

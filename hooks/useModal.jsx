@@ -15,7 +15,7 @@ const useModal = (isOpen,setIsOpen) => {
     setMemberInfo(member);
   }, []);
 
-  const handleShowModal = useCallback((member) => {
+  const handleShowModalWithClickedMemberInfo = useCallback((member) => {
     setIsOpen(prev => !prev);
     handleSetMemberInfo(member);
   }, [memberInfo]);
@@ -24,7 +24,7 @@ const useModal = (isOpen,setIsOpen) => {
     isOpen,
     memberInfo,
     handleCloseModal,
-    handleShowModal,
+    handleShowModalWithClickedMemberInfo,
     handleOpenModal
   }
 }

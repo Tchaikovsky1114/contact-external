@@ -12,7 +12,7 @@ import { colors } from '../../colors';
 import { DEFAULT_IMAGE } from '../../constants/constants';
 
 
-const MemberCard = ({staffName,photoFile,item, handleShowModal }) => {
+const MemberCard = ({staffName,photoFile,item, handleShowModalWithClickedMemberInfo }) => {
   const { width } = useWindowDimensions();
   
   return (
@@ -21,7 +21,7 @@ const MemberCard = ({staffName,photoFile,item, handleShowModal }) => {
         width: width < 330 ? 51 : (width < 500 && Platform.OS === 'android') ? 68 : (width < 500 && Platform.OS === 'ios') ? 64 : 120,
         borderColor: colors.default,
       }]}
-      onPress={() => handleShowModal(item) }
+      onPress={() => handleShowModalWithClickedMemberInfo(item) }
     >
       <View style={{width: width < 330 ? 40 : width < 500 ? 56 : 88, height: width < 330 ? 40 : width < 500 ? 56 : 88, overflow:'hidden',borderRadius: 99}}>
       <Image

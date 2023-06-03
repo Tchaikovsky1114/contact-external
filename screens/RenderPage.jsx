@@ -13,18 +13,21 @@ const RenderPage = () => {
   const navigation = useNavigation();
   const { width } = useWindowDimensions();
 
+  const onFling = (chartNumber) => (e) => {
+    if(e.nativeEvent.state === State.ACTIVE){
+      navigation.navigate('Organization',{showChart:chartNumber})
+    }
+  }
+   
   useEffect(() => {
     Platform.OS === 'android' && ScreenOrientation.lockAsync(ScreenOrientation.OrientationLock.PORTRAIT);
   }, []);
 
+
   return (
       <FlingGestureHandler
       direction={ Directions.RIGHT | Directions.LEFT}
-      onHandlerStateChange={(e) => {
-        if(e.nativeEvent.state === State.ACTIVE){
-          navigation.navigate('Organization',{showChart:0})
-        }
-      }}
+      onHandlerStateChange={onFling(0)}
       >
       <View style={[styles.container, { paddingHorizontal: width < 330 ? 16 : 32 }]}>
         <View style={{ flex: width < 330 ? 0.92 : 0.85, alignItems: 'center', justifyContent: 'center' }}>
@@ -60,35 +63,5 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     paddingBottom: 36,
     gap:8
-  },
-  button: {
-    justifyContent: 'center',
-    alignItems: 'center',
-    flexDirection: 'row',
-    borderBottomEndRadius: 6,
-    borderBottomStartRadius: 14,
-    borderTopEndRadius: 14,
-    borderTopStartRadius: 6,
-    elevation: 3,
-    paddingHorizontal:4,
-  },
-  button_ios : {
-    justifyContent: 'center',
-    alignItems: 'center',
-    height: 64,
-    flexDirection: 'row',
-    borderBottomEndRadius: 6,
-    borderBottomStartRadius: 14,
-    borderTopEndRadius: 14,
-    borderTopStartRadius: 6,
-    shadowOffset: {
-      width: 4,
-      height: 4,
-    },
-    shadowRadius: 4,
-    shadowOpacity: 0.8,
-    backgroundColor:'#fff',
-    shadowColor: '#ccc',
-    paddingHorizontal:4,
   }
 });

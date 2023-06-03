@@ -3,7 +3,7 @@ import React from 'react';
 import DirectModalMemberCardLayout from './MemberCardLayout';
 import DirectModalMemberCard from './MemberCard';
 
-const MemberList = ({ handleShowModal, width, contacts }) => {
+const MemberList = ({ handleShowModalWithClickedMemberInfo, width, contacts }) => {
   return (
     <ScrollView
       style={[styles.container, { marginTop: width < 330 ? 16 : 32 }]}
@@ -11,7 +11,7 @@ const MemberList = ({ handleShowModal, width, contacts }) => {
       <DirectModalMemberCardLayout>
         {contacts.map((item) => (
           <DirectModalMemberCard
-            handleShowModal={handleShowModal}
+            handleShowModalWithClickedMemberInfo={handleShowModalWithClickedMemberInfo}
             key={item.name}
             item={item}
             width={width}
