@@ -14,15 +14,12 @@ const GroupCard = ({ group, item,handleShowModal }) => {
           style={styles.container}
           data={group[item].list}
           getItem={(data, index) => {
-            
-            if (index in data) {
               return {
                 key: data[index].staff_name,
                 photo_file: data[index].photo_file,
                 staff_name: data[index].staff_name,
                 item: data[index],
               };
-            }
           }}
           getItemCount={(data) => data.length}
           keyExtractor={(item) => item.staff_name}
