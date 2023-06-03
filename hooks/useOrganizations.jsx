@@ -1,5 +1,5 @@
-import { StyleSheet, Text, View } from 'react-native'
-import React, { useCallback, useState } from 'react'
+
+import { useCallback, useState } from 'react'
 import { fetchData, mergeTotalMembers } from '../actions/dataActions';
 
 const useOrganizations = () => {
@@ -52,5 +52,3 @@ const useOrganizations = () => {
 }
 
 export default useOrganizations
-
-const styles = StyleSheet.create({})

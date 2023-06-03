@@ -9,7 +9,6 @@ const HeaderLayout = ({ children }) => {
     <View
       style={[styles.container,{width}]}
     >
-      
       {children}
     </View>
   );

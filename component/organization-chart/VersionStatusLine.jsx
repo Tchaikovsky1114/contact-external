@@ -10,7 +10,7 @@ const VersionStatusLine = () => {
   )
 }
 
-export default VersionStatusLine
+export default React.memo(VersionStatusLine)
 
 const styles = StyleSheet.create({
   container: {width:'100%',height:12,alignItems:'flex-end',backgroundColor:'transparent'},

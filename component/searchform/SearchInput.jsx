@@ -10,7 +10,6 @@ import { colors } from '../../colors';
 
 const SearchInput = ({ totalMembers,setFoundMembers }) => {
   const [inputValue, setInputValue] = useState('');
-  
   const { width } = useWindowDimensions();
   
   useEffect(() => {
@@ -18,6 +17,7 @@ const SearchInput = ({ totalMembers,setFoundMembers }) => {
       setFoundMembers([]);
       return;
     }
+    
     let timer = setTimeout(() => {
       const filterTarget = totalMembers.filter((item) =>
         item?.staff_name?.includes(inputValue)

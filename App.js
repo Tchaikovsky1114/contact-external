@@ -12,12 +12,12 @@ export default function App() {
     <>
     <StatusBar hidden />
     <GestureHandlerRootView style={{flex:1}}>
-    <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen name="RenderPage" component={RenderPage} options={{ headerShown:false }} /> 
-        <Stack.Screen name="Organization" component={OrganizationChart} options={{ headerShown:false }} /> 
-      </Stack.Navigator>
-    </NavigationContainer>
+      <NavigationContainer>
+        <Stack.Navigator>
+          <Stack.Screen name="RenderPage" component={RenderPage} options={{ headerShown:false }} /> 
+          <Stack.Screen name="Organization" component={OrganizationChart} options={{ headerShown:false }} /> 
+        </Stack.Navigator>
+      </NavigationContainer>
     </GestureHandlerRootView>
     </>
   );
