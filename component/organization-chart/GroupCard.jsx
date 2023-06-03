@@ -1,18 +1,20 @@
 import { StyleSheet, View, VirtualizedList } from 'react-native';
 import React from 'react';
-import OrgazationGroupTitle from './GroupTitle';
+import GroupTitle from './GroupTitle';
 import CardLayout from './CardLayout';
-import OrgazationGroupMembercard from './MemberCard';
+import MemberCard from './MemberCard';
 
-const OrgazationGroupItem = ({ group, item,handleShowModal }) => {
+const GroupCard = ({ group, item,handleShowModal }) => {
+  
   return (
     <View>
-      <OrgazationGroupTitle item={item} />
+      <GroupTitle item={item} />
       <CardLayout>
         <VirtualizedList
           style={styles.container}
           data={group[item].list}
           getItem={(data, index) => {
+            
             if (index in data) {
               return {
                 key: data[index].staff_name,
@@ -25,8 +27,9 @@ const OrgazationGroupItem = ({ group, item,handleShowModal }) => {
           getItemCount={(data) => data.length}
           keyExtractor={(item) => item.staff_name}
           renderItem={({ item }) =>
+
             item ? (
-              <OrgazationGroupMembercard
+              <MemberCard
                 key={item.staff_name}
                 staffName={item.staff_name}
                 photoFile={item.photo_file}
@@ -47,7 +50,7 @@ const OrgazationGroupItem = ({ group, item,handleShowModal }) => {
   );
 };
 
-export default React.memo(OrgazationGroupItem);
+export default React.memo(GroupCard);
 
 const styles = StyleSheet.create({
   container: {

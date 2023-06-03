@@ -10,7 +10,7 @@ import {
 import { buttonColors } from '../../colors';
 import { Pressable } from 'react-native';
 
-const OrgazationHeaderTabButton = ({ setTabIndex, index, item, tabIndex }) => {
+const HeaderTabButton = ({ setTabIndex, index, item, tabIndex }) => {
   const { width } = useWindowDimensions();
   return (
     <Pressable
@@ -39,7 +39,7 @@ const OrgazationHeaderTabButton = ({ setTabIndex, index, item, tabIndex }) => {
   );
 };
 
-export default React.memo(OrgazationHeaderTabButton);
+export default React.memo(HeaderTabButton);
 
 const styles = StyleSheet.create({
   

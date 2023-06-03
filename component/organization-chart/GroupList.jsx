@@ -1,9 +1,9 @@
 import { FlatList, View, useWindowDimensions } from 'react-native';
 import React, { memo, useCallback, useRef, useState } from 'react';
-import OrgazationGroupItem from './GroupCard';
+import GroupCard from './GroupCard';
 import { State, TapGestureHandler } from 'react-native-gesture-handler';
 
-const OrgazationChartFlatList = ({
+const GroupList = ({
   group,
   setTabIndex,
   setFoundMembers,
@@ -49,7 +49,7 @@ const OrgazationChartFlatList = ({
           data={Object.keys(group)}
           keyExtractor={(item) => item}
           renderItem={({ item }) => (
-            <OrgazationGroupItem
+            <GroupCard
               item={item}
               handleShowModal={handleShowModal}
               key={item.staff_name}
@@ -62,4 +62,4 @@ const OrgazationChartFlatList = ({
   );
 };
 
-export default memo(OrgazationChartFlatList);
+export default memo(GroupList);

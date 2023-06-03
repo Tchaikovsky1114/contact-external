@@ -2,7 +2,7 @@ import { Platform, StyleSheet, useWindowDimensions, View } from 'react-native';
 import React from 'react';
 
 
-const OrgazationHeadLayout = ({ children }) => {
+const HeaderLayout = ({ children }) => {
   const { width } = useWindowDimensions();
   
   return (
@@ -15,7 +15,7 @@ const OrgazationHeadLayout = ({ children }) => {
   );
 };
 
-export default React.memo(OrgazationHeadLayout);
+export default React.memo(HeaderLayout);
 
 const styles = StyleSheet.create({
   container: {

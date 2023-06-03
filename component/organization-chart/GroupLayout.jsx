@@ -1,7 +1,7 @@
 import { StyleSheet, View } from 'react-native';
 import React from 'react';
 
-const OrgazationGroupLayout = ({ children }) => {
+const GroupLayout = ({ children }) => {
   return (
     <View style={styles.container}>
       {children}
@@ -9,7 +9,7 @@ const OrgazationGroupLayout = ({ children }) => {
   );
 };
 
-export default React.memo(OrgazationGroupLayout);
+export default React.memo(GroupLayout);
 
 const styles = StyleSheet.create({
   container: {

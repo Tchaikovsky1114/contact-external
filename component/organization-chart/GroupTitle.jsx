@@ -2,7 +2,7 @@ import { View, Text, useWindowDimensions } from 'react-native';
 import React from 'react';
 import { colors } from '../../colors';
 
-const OrgazationGroupTitle = ({ item }) => {
+const GroupTitle = ({ item }) => {
   const { width } = useWindowDimensions();
   return (
     <View
@@ -34,4 +34,4 @@ const OrgazationGroupTitle = ({ item }) => {
   );
 };
 
-export default React.memo(OrgazationGroupTitle);
+export default React.memo(GroupTitle);

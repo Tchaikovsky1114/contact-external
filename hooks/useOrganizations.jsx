@@ -34,7 +34,7 @@ const useOrganizations = () => {
     const initData = useCallback(async () => {
         try {
           const data = await fetchData();
-          setOrganization(data.orgazation);
+          setOrganization(data.organization);
           setTab(data.tab);
         } catch (errorMessage) {
           setError(errorMessage);

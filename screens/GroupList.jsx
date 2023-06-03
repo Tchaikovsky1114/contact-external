@@ -21,8 +21,7 @@ const GroupList = () => {
       direction={ Directions.RIGHT | Directions.LEFT}
       onHandlerStateChange={(e) => {
         if(e.nativeEvent.state === State.ACTIVE){
-          console.log('Active Fling');
-          navigation.navigate('OrgazationChart',{showChart:0})
+          navigation.navigate('Organization',{showChart:0})
         }
       }}
       >
@@ -46,7 +45,7 @@ const GroupList = () => {
           }}
         >
           <Pressable
-            onPress={() => navigation.navigate('OrgazationChart',{showChart:0})}
+            onPress={() => navigation.navigate('Organization',{showChart:0})}
             style={({ pressed }) => [
               Platform.OS === 'android' ? styles.button : styles.button_ios,
               {
@@ -60,7 +59,7 @@ const GroupList = () => {
           </Pressable>
 
           <Pressable
-            onPress={() => navigation.navigate('OrgazationChart',{showChart:1})}
+            onPress={() => navigation.navigate('Organization',{showChart:1})}
             style={({ pressed }) => [
               Platform.OS === 'android' ? styles.button : styles.button_ios,
               {
@@ -74,7 +73,7 @@ const GroupList = () => {
           </Pressable>
 
           <Pressable
-            onPress={() => navigation.navigate('OrgazationChart',{showChart:2})}
+            onPress={() => navigation.navigate('Organization',{showChart:2})}
             style={({ pressed }) => [
               Platform.OS === 'android' ? styles.button : styles.button_ios,
               {

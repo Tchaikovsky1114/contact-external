@@ -12,7 +12,7 @@ import { colors } from '../../colors';
 import { DEFAULT_IMAGE } from '../../constants/constants';
 
 
-const OrgazationGroupMembercard = ({staffName,photoFile,item, handleShowModal }) => {
+const MemberCard = ({staffName,photoFile,item, handleShowModal }) => {
   const { width } = useWindowDimensions();
   
   return (
@@ -49,7 +49,7 @@ const OrgazationGroupMembercard = ({staffName,photoFile,item, handleShowModal })
   );
 };
 
-export default React.memo(OrgazationGroupMembercard);
+export default React.memo(MemberCard);
 
 const styles = StyleSheet.create({
   container: {

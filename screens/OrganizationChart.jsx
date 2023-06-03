@@ -1,21 +1,21 @@
 import { useWindowDimensions } from 'react-native';
 import { useEffect, useState } from 'react';
 import { buttonColors } from '../colors';
-import SecondaryContactModal from '../component/SecondaryContactModal';
+import SecondaryContactModal from '../component/member-modal/MemberModal';
 import adpiaImage from '../assets/swlogo.png';
-import OrgazationGroupLayout from '../component/orgazationchart/OrgazationGroupLayout';
-import DirectModal from '../component/directmodal/DirectModal';
-import OrgazationChartFlatList from '../component/orgazationchart/OrgazationChartFlatList';
+import GroupLayout from '../component/organization-chart/GroupLayout';
+import DirectModal from '../component/direct-modal/DirectModal';
+import GroupList from '../component/organization-chart/GroupList';
 import { useRoute } from '@react-navigation/native';
 import useModal from '../hooks/useModal';
 import useOrganizations from '../hooks/useOrganizations';
 import usePhone from '../hooks/usePhone';
-import BackupButton from '../component/orgazationchart/BackupButton';
-import VersionStatusLine from '../component/orgazationchart/VersionStatusLine';
-import SearchBox from '../component/searchbox/SearchBox';
-import OrgazationHeader from '../component/orgazationchart/OrgazationHeader';
+import BackupButton from '../component/organization-chart/BackupButton';
+import VersionStatusLine from '../component/organization-chart/VersionStatusLine';
+import SearchBox from '../component/searchform/SearchBox';
+import Header from '../component/organization-chart/Header';
 
-const OrgazationChart = () => {
+const OrganizationChart = () => {
   const {
     params: { showChart },
   } = useRoute();
@@ -83,8 +83,8 @@ const OrgazationChart = () => {
         pressSMS={pressSMS}
       />
 
-      <OrgazationGroupLayout>
-        <OrgazationHeader
+      <GroupLayout>
+        <Header
           handleOpenDirectModal={handleOpenDirectModal}
           setFoundMembers={setFoundMembers}
           setTabIndex={setTabIndex}
@@ -104,7 +104,7 @@ const OrgazationChart = () => {
         )}
 
         {organization && group && (
-          <OrgazationChartFlatList
+          <GroupList
             group={group}
             handleShowModal={handleShowModal}
             tabIndex={tabIndex}
@@ -119,9 +119,9 @@ const OrgazationChart = () => {
           />
         )}
         <VersionStatusLine />
-      </OrgazationGroupLayout>
+      </GroupLayout>
     </>
   );
 };
 
-export default OrgazationChart;
+export default OrganizationChart;

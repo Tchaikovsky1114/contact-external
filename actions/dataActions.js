@@ -1,4 +1,5 @@
 import AsyncStorage from "@react-native-async-storage/async-storage";
+import { DEFAULT_IMAGE } from "../constants/constants";
 
 
 export const getSameField = (field) => (target) => (item) => item.name === target[field]
@@ -24,21 +25,19 @@ export const fetchData = async () => {
     const data = await fetchGroupData();
     const sortTab = sortingData(data);
     return {
-      orgazation: data,
+      organization: data,
       tab: sortTab
     }
-  } catch (error) {
-    alert(error,'서버에 오류가 발생했습니다.')
+  } catch (errorMessage) {
+    alert(errorMessage)
   }    
 }
 
 
 export const fetchGroupData = async () => {
   try {
-    
-    const response = await fetch('');
+    const response = await fetch('https://biz.swadpia.co.kr/api/organization/organization.php?action=organizationList');
     const data = await response.json();
-
     if(!data){
       alert('데이터 없음. \n서버 관리자에게 문의 부탁드립니다.');
       throw new Error('서버 통신 장애. 아무 값도 존재하지 않음')
@@ -116,7 +115,7 @@ export const createMemberInfoObject = (memberInfo) => {
     mobile: memberInfo.mobile || '',
     office: (memberInfo.office_phone && memberInfo.office_phone.includes('02')) ? memberInfo.office_phone.substr(memberInfo.office_phone.length - 3) : memberInfo.office_phone,
     organization: memberInfo.org_name || '',
-    profileImage: memberInfo.photo_file || 'https://www.nicepng.com/png/detail/933-9332131_profile-picture-default-png.png',
+    profileImage: memberInfo.photo_file || DEFAULT_IMAGE,
   }
   return storageData
 }

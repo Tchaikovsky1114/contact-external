@@ -1,19 +1,19 @@
 import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import React from 'react';
-import OrgazationHeaderTabButton from './HeaderTabButton';
+import HeaderTabButton from './HeaderTabButton';
 import starImage from '../../assets/star.png';
-import OrgazationHeadLayout from './HeaderLayout';
+import HeaderLayout from './HeaderLayout';
 import FindMemberForm from '../searchform/SearchInput';
 
-const OrgazationHeader = ({ width, handleOpenDirectModal, tab, tabIndex, setTabIndex,setFoundMembers,totalMembers }) => {
+const Header = ({ width, handleOpenDirectModal, tab, tabIndex, setTabIndex,setFoundMembers,totalMembers }) => {
   return (
-    <OrgazationHeadLayout>
+    <HeaderLayout>
     <View style={{flex:0.9,flexDirection:'row',gap:4}}>
     {tab &&
       tab.map((item, index) => {
         if(typeof item === 'undefined') return;
         return (
-        <OrgazationHeaderTabButton
+        <HeaderTabButton
           index={index}
           item={item}
           tabIndex={tabIndex}
@@ -29,11 +29,11 @@ const OrgazationHeader = ({ width, handleOpenDirectModal, tab, tabIndex, setTabI
     onPress={handleOpenDirectModal}>
       <Image source={starImage} style={{width: width < 330 ? 24 : width < 440 ? 32 : 40, height: width < 330 ? 19.6 : width < 440 ? 28 : 32}} />
     </TouchableOpacity>
-  </OrgazationHeadLayout>
+  </HeaderLayout>
   );
 };
 
-export default React.memo(OrgazationHeader);
+export default React.memo(Header);
 
 const styles = StyleSheet.create({
   starButton: {paddingVertical:8, paddingHorizontal:8,flex:0.1,flexDirection:'column',alignItems:'center'}
