@@ -8,7 +8,7 @@ import React, { useEffect, useState } from 'react';
 import { colors } from '../../colors';
 
 
-const FindMemberForm = ({ totalMembers,setFoundMembers }) => {
+const SearchInput = ({ totalMembers,setFoundMembers }) => {
   const [inputValue, setInputValue] = useState('');
   
   const { width } = useWindowDimensions();
@@ -59,7 +59,7 @@ const FindMemberForm = ({ totalMembers,setFoundMembers }) => {
   );
 };
 
-export default FindMemberForm;
+export default SearchInput;
 
 const styles = StyleSheet.create({
   container: {

@@ -3,7 +3,7 @@ import React from 'react';
 import HeaderTabButton from './HeaderTabButton';
 import starImage from '../../assets/star.png';
 import HeaderLayout from './HeaderLayout';
-import FindMemberForm from '../searchform/SearchInput';
+import SearchInput from '../searchform/SearchInput';
 
 const Header = ({ width, handleOpenDirectModal, tab, tabIndex, setTabIndex,setFoundMembers,totalMembers }) => {
   return (
@@ -23,7 +23,7 @@ const Header = ({ width, handleOpenDirectModal, tab, tabIndex, setTabIndex,setFo
         )}
       )}
       </View>
-      <FindMemberForm setFoundMembers={setFoundMembers} totalMembers={totalMembers} />
+      <SearchInput setFoundMembers={setFoundMembers} totalMembers={totalMembers} />
     <TouchableOpacity
     style={styles.starButton}
     onPress={handleOpenDirectModal}>

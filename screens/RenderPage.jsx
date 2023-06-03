@@ -8,7 +8,7 @@ import swlogo from '../assets/mainlogo.png';
 import { useNavigation } from '@react-navigation/native';
 import { Directions, FlingGestureHandler, State } from 'react-native-gesture-handler';
 
-const GroupList = () => {
+const RenderPage = () => {
   const navigation = useNavigation();
   const { width } = useWindowDimensions();
 
@@ -90,7 +90,7 @@ const GroupList = () => {
   );
 };
 
-export default GroupList;
+export default RenderPage;
 
 const styles = StyleSheet.create({
   container: {
