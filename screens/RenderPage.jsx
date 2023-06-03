@@ -7,6 +7,7 @@ import adpiamall from '../assets/adpiamall.png';
 import swlogo from '../assets/mainlogo.png';
 import { useNavigation } from '@react-navigation/native';
 import { Directions, FlingGestureHandler, State } from 'react-native-gesture-handler';
+import RenderButton from '../component/render-page/RenderButton';
 
 const RenderPage = () => {
   const navigation = useNavigation();
@@ -34,56 +35,10 @@ const RenderPage = () => {
           />
         </View>
 
-        <View
-          style={{
-            flex: width < 330 ? 0.08 : 0.1,
-            width: '100%',
-            flexDirection: 'row',
-            justifyContent: 'center',
-            paddingBottom: 36,
-            gap:8
-          }}
-        >
-          <Pressable
-            onPress={() => navigation.navigate('Organization',{showChart:0})}
-            style={({ pressed }) => [
-              Platform.OS === 'android' ? styles.button : styles.button_ios,
-              {
-                backgroundColor: pressed ? '#453f85df' : '#fff',
-                width: '33%',
-                
-              },
-            ]}
-          >
-            <Image source={swadpia} style={{width: width < 500 ? '100%' : '60%', height:width < 500 ? 24 : 32}} />
-          </Pressable>
-
-          <Pressable
-            onPress={() => navigation.navigate('Organization',{showChart:1})}
-            style={({ pressed }) => [
-              Platform.OS === 'android' ? styles.button : styles.button_ios,
-              {
-                backgroundColor: pressed ? '#453f85df' : '#fff',
-                width:'33%',
-                
-              },
-            ]}
-          >
-            <Image source={adpiamall} style={{width: width < 500 ? '100%' : '60%', height:width < 500 ? 24 : 32}} />
-          </Pressable>
-
-          <Pressable
-            onPress={() => navigation.navigate('Organization',{showChart:2})}
-            style={({ pressed }) => [
-              Platform.OS === 'android' ? styles.button : styles.button_ios,
-              {
-                backgroundColor: pressed ? '#453f85df' : '#fff',
-                width:'33%',
-              },
-            ]}
-          >
-          <Image source={foodmall} style={{width: width < 500 ? '100%' : '60%', height:width < 500 ? 24 : 32}} />
-          </Pressable>
+        <View style={[styles.buttonGroup,{ flex: width < 330 ? 0.08 : 0.1 } ]}>
+          <RenderButton imageUrl={swadpia} showChart={0} width={width} />
+          <RenderButton imageUrl={adpiamall} showChart={1} width={width} />
+          <RenderButton imageUrl={foodmall} showChart={2} width={width} />
         </View>
       </View>
       </FlingGestureHandler>
@@ -98,6 +53,13 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
+  },
+  buttonGroup:{
+    width: '100%',
+    flexDirection: 'row',
+    justifyContent: 'center',
+    paddingBottom: 36,
+    gap:8
   },
   button: {
     justifyContent: 'center',

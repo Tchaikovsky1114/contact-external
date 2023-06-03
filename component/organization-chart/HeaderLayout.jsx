@@ -20,7 +20,6 @@ const styles = StyleSheet.create({
   container: {
     flexDirection: 'row',
     columnGap: 12,
-    
     shadowColor:'#fff',
     paddingHorizontal: 16,
     paddingVertical:16,
